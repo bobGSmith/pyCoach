@@ -27,6 +27,3 @@ from .find_pbs import is_pb
 
 __version__ = "1.0.0"
 __author__ = "bob g smith"
-
-if __name__ == "__main__":
-    print(__doc__)
