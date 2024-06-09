@@ -29,7 +29,7 @@ if __name__ == "__main__":
     pb_data_path = sys.argv[2]
     
     pb_data = pd.read_csv(pb_data_path,index_col=False)
-    pb_data["date"]= pd.to_datetime(pb_data["date"])
+    pb_data["date"]= pd.to_datetime(pb_data["date"],format="mixed")
     
     volume_intensity_curve = get_volume_intensity_curve(exercise,pb_data)
     print(volume_intensity_curve.head())

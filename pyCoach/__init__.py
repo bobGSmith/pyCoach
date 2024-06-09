@@ -16,6 +16,10 @@ scripts:
         args: path_to_pb_data.csv
     * volume_intensity_curve - plot a curve of volume and intensity for given exercise 
         args: exercise, path_to_pb_data.csv
+    * gen_month - takes a planned microcycle of 2 sessions and creates a mesocycle
+        args: path_to_microcycle (this should be a text doc with 2 sessions planned titled
+        # m1 s1 dd/mm/yyyy and # m1 s2 dd/mm/yyyy respectively within the document), and the 
+        outpath where you wish to save the full months training. 
     
 """
 

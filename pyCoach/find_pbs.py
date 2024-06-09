@@ -18,14 +18,14 @@ if __name__ == "__main__":
     
     # Load data    
     session_data = pd.read_csv(session_data_path,index_col=False)
-    session_data["date"] = pd.to_datetime(session_data["date"],dayfirst=True)
+    session_data["date"] = pd.to_datetime(session_data["date"],dayfirst=True,format="mixed")
 
     pb_data = pd.read_csv(pb_data_path,index_col=False)
-    pb_data["date"]= pd.to_datetime(pb_data["date"])#,dayfirst=True)
+    pb_data["date"]= pd.to_datetime(pb_data["date"],format="mixed",dayfirst=True)
 
     # Crop to relevant session data 
     session_data = session_data.loc[session_data.date > pb_data.date.max()]
-    
+    #print("DEBUG",len(session_data))
     for i in range(len(session_data)):
         effort = session_data.iloc[i]
         if is_pb(effort,pb_data):
